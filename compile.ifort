@@ -1,0 +1,2 @@
+#!/bin/bash
+ifort main.f90 -o atomhf -mkl=sequential

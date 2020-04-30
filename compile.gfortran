@@ -1,0 +1,2 @@
+#!/bin/bash
+gfortran main.f90 -lblas -llapack -o atomhf 
