@@ -68,8 +68,11 @@ Program AtomHF ! Program for atomic closed-shell Hatree-Fock calculation
       end do
       deallocate(ff,ss,w,work)
     end do
-    if(iter.ge.2) mad = 0.85d0*mad + 0.15d0*dold
-    dold = mad
+    if(iter.ge.2) then
+      maf = 0.85d0*mad + 0.15d0*dold
+      dold = mad
+      mad = maf
+    end if
     mavc = 0.d0
     mavx = 0.d0
     etot = 0.d0
